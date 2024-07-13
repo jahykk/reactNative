@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View,Button,Alert } from 'react-native';
 import AppFooter from './components/AppFooter';
 import AppHeader from './components/AppHeader';
+import Content from './components/Content';
 
 export default function App():React.JSX.Element {
 
@@ -12,18 +13,18 @@ export default function App():React.JSX.Element {
   }
 
   const users =[
-    {id:1001,name:'Gee'},
-    {id:1002,name:'Gem'},
+    {id:'2113110411',name:'เยาวเรศ แก่นมาลี'},
+    
   ]
   return (
     <View style={styles.container}>
-      <AppHeader title="This is Header" year={2018}/>
-      <AppHeader title="This is Header2"/>
-      <Text>Hello React Native!</Text>
+      <AppHeader title="Input your fullname" />
+      
+      
       { users.map((data,index)=>{
         return(
           <Text key={data.id}>
-            No. {index+1} ID: {data.id} Name: {data.name} 
+           ID: {data.id} Name: {data.name} 
           </Text>
 
         )
@@ -44,10 +45,22 @@ export default function App():React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
+  header:{
+    backgroundColor: '#f9bdbb',
+    padding: 20,
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headerText:{
+     fontSize: 20,
+     fontWeight: 'bold',
+     color: '#8e24aa',
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#f8bbd0',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+ 
 });
