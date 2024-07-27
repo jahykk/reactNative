@@ -34,6 +34,7 @@ export default function App():React.JSX.Element {
 
       <Button title="Click Me" 
       onPress={onClickMe}
+      
       color="pink"
       /* // onPress={()=>{
       Alert.alert('Hi','React Native is FUn!!')}
