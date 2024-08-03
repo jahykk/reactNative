@@ -1,9 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react'
+import { stylesPractice } from './styles';
 
-type AppHeaderProps = {
-    title:string;
-    year? :number;//?ส่งค่าแบบแสดงหรือไม่แสดงก็ได้
+ type AppHeaderProp = {
+  title:string;
+  year? :number;
+ }
+
+ interface AppHeaderProps{
+  message: string;
+  fullname : string;
+  
 }
 
 const styles = StyleSheet.create({
@@ -25,12 +32,14 @@ const styles = StyleSheet.create({
 });
 
 
-const AppHeader = ({title,year}:AppHeaderProps) : React.JSX.Element=> {
+const AppHeader = ({message,fullname}:AppHeaderProps) : React.JSX.Element=> {
+  
   return (
     <View>
-      <Text>
-        {title} 
-        {year && year + 543}</Text>
+      <View style={stylesPractice.header}>
+      <Text style={stylesPractice.headerText}>{message}</Text>
+      <Text style={stylesPractice.subtitleText}>{fullname}</Text>
+    </View>
     </View>
   )
 }
