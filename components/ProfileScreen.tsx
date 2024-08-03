@@ -1,31 +1,30 @@
 import { Text, View, Image, Button } from "react-native";
 import React, { useState } from "react";
 import styles from "./styles";
+
 const ProfileScreen = (): React.JSX.Element => {
   const profileImage = require("../assets/profile.jpg");
   const [name, setName] = useState("Yaowaret Kaenmalee");
-  const [Image, setImage] = useState(require("../assets/รูปอวตาร.png"));
-
+  const [image, setImage] = useState(profileImage);
+const  proimg = require("../assets/New.png");
   const handleChangeName = () => {
-    setName("Jah");
+    setName(name == "Yaowaret Kaenmalee"? "Jah" : "Yaowaret Kaenmalee"); // กดปุ่มแล้วชื่อเปลี่ยนจากชื่อใหม่กลับไปเป็นชื่อเดิม
   };
   const handleChangImage = () => {
-    setImage("../assets/รูปอวตาร.png");
+    setImage(image == profileImage ? proimg :  profileImage );
   };
-
-  
-
+ 
   return (
     <View style={styles.container}>
       <View style={styles.profileContainer}>
-        <Image source={profileImage} style={styles.profileImage} />
+         <Image source={image} style={styles.profileImage} /> 
         <View>
           <Text style={styles.profileName}>{name}</Text>
           <Button title="Change Name" onPress={handleChangeName} />
+          <Text>{"\n"}</Text>
+          <Button title="Change Image" onPress={handleChangImage} />
         </View>
-        <View>
-            <Button title="Change Image"onPress={handleChangImage}/>
-        </View>
+        
       </View>
     </View>
   );
