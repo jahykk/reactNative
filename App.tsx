@@ -4,14 +4,23 @@ import ProfileScreen from './components/ProfileScreen'
 import FlastListExample from './components/FlastListExample';
 import FlatListcallBackend from './components/FlatListcallBackend';
 import NewApp from './components/NewApp';
+import AxiosgetData from './components/AxiosgetData';
+
+import WeatherLondon from './components/WeatherLondon';
+import WeatherBangkok from './components/WeatherBangkok';
  
 const App = ():React.JSX.Element => {
   return (
     <View>
       {/* <ProfileScreen/> */}
-      <FlastListExample/>
+      {/* <FlastListExample/>
       <FlatListcallBackend/> 
-      <NewApp/>
+      <NewApp/> */}
+      {/* <AxiosgetData/> */}
+      {/* <AxiosPostData/> */}
+      {/* <WeatherLondon/> */}
+      <WeatherBangkok/>
+
     </View>
   )
 };
