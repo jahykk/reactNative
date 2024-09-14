@@ -15,6 +15,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CreatePostScreen from "./screens/CreatePostScreen";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import DetailScreen from "./screens/DetailScreen";
 
 const HomeStack = createNativeStackNavigator();
 const ProductStack = createDrawerNavigator();
@@ -62,9 +63,8 @@ function ProductStackScreen() {
         headerTitleStyle: { fontWeight: "bold" },
       }}
     >
-      <ProductStack.Screen name="Product" 
-      component={ProductScreen} 
-      />
+      <ProductStack.Screen name="Product" component={ProductScreen} />
+      <ProductStack.Screen name="Detail" component={DetailScreen} />
     </ProductStack.Navigator>
   );
 }
