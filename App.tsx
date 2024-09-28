@@ -28,12 +28,39 @@ import Toast from "react-native-toast-message";
 
 
 import DetailScreen from "./screens/DetailScreen";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import CameraScreen from "./screens/CameraScreen";
 
 const HomeStack = createNativeStackNavigator();
 const ProductStack = createDrawerNavigator();
 const LoginStack = createNativeStackNavigator();
+const CameraStack = createDrawerNavigator();
+
+
 
 const Drawer = createDrawerNavigator();
+
+const Tab = createBottomTabNavigator();
+
+
+
+function TabContainer(){
+  return(
+    <Tab.Navigator screenOptions={{headerShown:false}}>
+       <Tab.Screen 
+       name="HomeStack"
+       component={CameraStackScreen}
+       options={{tabBarLabel:'หน้าหลัก'}}
+      />
+      <Tab.Screen 
+       name="HomeStack"
+       component={CameraStackScreen}
+       options={{tabBarLabel:'กล้อง'}}
+      />
+    </Tab.Navigator>
+  )
+
+}
 
 
 function HomeStackScreen() {
@@ -83,17 +110,17 @@ function ProductStackScreen() {
   );
 }
 
-function LoginStackScreen() {
+function CameraStackScreen() {
   return (
-    <LoginStack.Navigator
+    <CameraStack.Navigator
       initialRouteName="Products"
       screenOptions={{
         //Global
         headerTitleStyle: { fontWeight: "bold" },
       }}
     >
-      <LoginStack.Screen name="Login" component={LoginScreen} />
-    </LoginStack.Navigator>
+      <CameraStack.Screen name="Camera" component={CameraScreen} />
+    </CameraStack.Navigator>
   );
 }
 
